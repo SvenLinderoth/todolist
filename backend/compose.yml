@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  postgres:
+    container_name: fakegres
+    image: postgres:14.5
+    environment:
+      - POSTGRES_DB=testdb
+      - POSTGRES_PASSWORD=admin
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres-testdata:/var/lib/postgres
+
+volumes: 
+  postgres-testdata:
